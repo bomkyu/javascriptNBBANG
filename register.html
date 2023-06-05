@@ -4,17 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css-->
+    <link rel="stylesheet" href="./lib/css/defalut.css">
+    <link rel="stylesheet" href="./lib/css/common.css">
+    
+    <!-- script -->
+    <script defer src="./lib/javascript/common.js"></script>
     <script defer type="module" src="./lib/javascript/register.js"></script>
     <title>회원가입</title>
 </head>
 <body>
-    <form method="post" id="register-form">
-        <input type="text" id="id" placeholder="ID">
-        <input type="password" name="password" id="password1" placeholder="PASSWORD1">
-        <input type="password" name="password" id="password2" placeholder="PASSWORD2">
-        <input type="text" name="name" id="name" placeholder="userName">
-        <input type="text" name="NickName" id="NickName" placeholder="userNickName">
-        <button type="submit">회원가입 하깅</button>
-    </form>
+    <div class="login-wrap">
+        <form method="post" id="register-form">
+            <div class="input-st-wrap">
+                <label class="input-st" name="id">
+                    <input type="text" id="id" name="id">
+                    <span>아이디</span>
+                </label>
+            </div>
+
+            <div class="input-st-wrap">
+                <label class="input-st" name="password1">
+                    <input type="password" id="password1" name="password1">
+                    <span>패스워드</span>
+                </label>
+            </div>
+
+            <div class="input-st-wrap">
+                <label class="input-st" name="password2">
+                    <input type="password" id="password2" name="password2">
+                    <span>패스워드</span>
+                </label>
+            </div>
+
+            <div class="input-st-wrap">
+                <label class="input-st" name="name">
+                    <input type="text" id="name" name="userName">
+                    <span>이름</span>
+                </label>
+            </div>
+
+            <div class="input-st-wrap">
+                <label class="input-st" name="NickName">
+                    <input type="text" id="NickName" name="NickName">
+                    <span>닉네임</span>
+                </label>
+            </div>
+
+            <button class="btn-st1" type="submit">회원가입</button>
+        </form>
+    </div>
 </body>
 </html>
