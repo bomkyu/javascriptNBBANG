@@ -59,6 +59,7 @@ input {
             appearance: none;
     border:none;
     outline: none;
+	border-radius: none;
     box-sizing: border-box;
 }
 
