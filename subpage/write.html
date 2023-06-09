@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>View</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="../lib/css/defalut.css">
+    <link rel="stylesheet" href="../lib/css/common.css">
+    <link rel="stylesheet" href="./lib/css/style.css">
+    
+    <!-- script -->
+    <script defer src="../lib/javascript/common.js"></script>
+    <script defer type="module" src="../lib/javascript/controller/main.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>NBBang</h1>
+        
+    </header>
+    <div class="content-wrap">
+        <input type="text" id="datepicker" placeholder="Select dates">
+        <ul class="date-selector">
+            <li>
+                <div class="date-selector-contain">
+                    <p class="title">가는날</p>
+                    <p class="date">06.20일</p>
+                </div>
+            </li>
+            <li>
+                <div class="date-selector-contain">
+                    <p class="title">오는날</p>
+                    <p class="date">06.25일</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    class Datepicker {
+  constructor(elementId) {
+    this.datepickerElement = document.getElementById(elementId);
+    this.startDate = null;
+    this.endDate = null;
+    this.init();
+  }
+
+  init() {
+    this.datepickerElement.addEventListener("focus", this.openCalendar.bind(this));
+  }
+
+  openCalendar() {
+    const calendarContainer = document.createElement("div");
+    calendarContainer.classList.add("calendar-container");
+    calendarContainer.addEventListener("click", this.handleDateSelection.bind(this));
+
+    const today = new Date();
+    const currentMonth = today.getMonth();
+    const currentYear = today.getFullYear();
+
+    for (let i = 0; i < 2; i++) {
+      const calendar = document.createElement("div");
+      calendar.classList.add("calendar");
+
+      const header = document.createElement("div");
+      header.classList.add("calendar-header");
+      header.innerText = i === 0 ? "Departure" : "Return";
+      calendar.appendChild(header);
+
+      const monthName = document.createElement("div");
+      monthName.classList.add("month-name");
+      monthName.innerText = this.getMonthName(currentMonth + i) + " " + (currentYear + Math.floor((currentMonth + i) / 12));
+      calendar.appendChild(monthName);
+
+      const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      const weekDays = document.createElement("ul");
+      weekDays.classList.add("week-days");
+      for (let j = 0; j < 7; j++) {
+        const day = document.createElement("li");
+        day.innerText = daysOfWeek[j];
+        weekDays.appendChild(day);
+      }
+      calendar.appendChild(weekDays);
+
+      const monthStartDate = new Date(currentYear, currentMonth + i, 1);
+      const monthEndDate = new Date(currentYear, currentMonth + i + 1, 0);
+      const numDays = monthEndDate.getDate();
+
+      const datesList = document.createElement("ul");
+      datesList.classList.add("dates-list");
+
+      for (let k = 1; k <= numDays; k++) {
+        const dateItem = document.createElement("li");
+        dateItem.innerText = k;
+        dateItem.dataset.date = k;
+        dateItem.dataset.month = currentMonth + i;
+        dateItem.dataset.year = currentYear + Math.floor((currentMonth + i) / 12);
+        dateItem.addEventListener("click", this.selectDate.bind(this));
+        datesList.appendChild(dateItem);
+      }
+
+      calendar.appendChild(datesList);
+      calendarContainer.appendChild(calendar);
+    }
+
+    document.body.appendChild(calendarContainer);
+    document.addEventListener("click", this.closeCalendar.bind(this));
+  }
+
+  handleDateSelection(event) {
+    event.stopPropagation();
+  }
+
+  selectDate(event) {
+    const selectedCell = event.target;
+    const selectedDate = new Date(
+      parseInt(selectedCell.dataset.year),
+      parseInt(selectedCell.dataset.month),
+      parseInt(selectedCell.dataset.date)
+    );
+
+    if (!this.startDate) {
+      this.startDate = selectedDate;
+      selectedCell.classList.add("selected-start-date");
+    } else if (!this.endDate) {
+      if (selectedDate >= this.startDate) {
+        this.endDate = selectedDate;
+        selectedCell.classList.add("selected-end-date");
+        this.datepickerElement.value = this.formatDate(this.startDate) + " - " + this.formatDate(this.endDate);
+      } else {
+        this.clearSelection();
+        this.startDate = selectedDate;
+        selectedCell.classList.add("selected-start-date");
+      }
+    } else {
+      this.clearSelection();
+      this.startDate = selectedDate;
+      selectedCell.classList.add("selected-start-date");
+    }
+  }
+
+  clearSelection() {
+    this.startDate = null;
+    this.endDate = null;
+    const selectedDates = document.querySelectorAll(".selected-start-date, .selected-end-date");
+    selectedDates.forEach((cell) => {
+      cell.classList.remove("selected-start-date", "selected-end-date");
+    });
+  }
+
+  formatDate(date) {
+    return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+  }
+
+  getMonthName(month) {
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    return monthNames[month % 12];
+  }
+
+  closeCalendar(event) {
+    if (!event.target.closest("#datepicker") && !event.target.closest(".calendar-container")) {
+      document.querySelector(".calendar-container").remove();
+    }
+  }
+}
+
+const datepicker = new Datepicker("datepicker");
+
+</script>
+</html>

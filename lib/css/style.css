@@ -1,0 +1,9 @@
+/* 메인페이지 */
+.user-info { padding: 30px 0; }
+.user-info > dl { display: flex; width: 100%; justify-content: center; }
+.user-info > dl > dt { width: 30%; margin-right: 30px; }
+.user-info > dl > dd { display: flex; align-items: center; line-height: 1.5; }
+
+
+.no-data {max-width: 300px; width: 100%; margin:0 auto; margin-top: 40px; }
+.no-data p { text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 20px; }

@@ -1,9 +1,10 @@
-.login-tit { margin-bottom: 34px; font-size: 42px; font-weight: bold; text-align: center; }
-.login-wrap {display: flex; width: 100%; height: 100vh; padding: 0 15px; flex-direction: column; align-items: center; justify-content: center;}
-.login-wrap > form { max-width: 480px; width: 100%; }
-.input-st-wrap { width: 100%; padding: 0 0 6px; }
-.input-st-wrap:not(:last-child) {margin-bottom:10px}
+/* header */
+header { position: fixed; top: 0; left: 0; width: 100%; height: 50px; border-bottom: 1px solid #CCC; }
 
+/* 콘텐츠 영역 */
+.content-wrap { max-width: 1320px; width: 100%; margin: 0 auto; margin-top: 20px; padding: 50px 20px 0px }
+
+/*인풋 스타일*/
 .input-st { position: relative; display: block; width: 100%; height: 50px; }
 .input-st::after { position: absolute; width: 0; height: 1px; left: 0; bottom: 0; background-color: #000; transition: width 0.3s; content:""; }
 .input-st.active::after { width: 100%; }
@@ -13,9 +14,23 @@
 .input-st span { position:absolute; padding-left: 7px; top:0; left: 0; transform-origin: left; transition: 0.3s; line-height: 38px; color:#8e8e8e; font-size:14px; }
 .input-st input { width: 100%; height: 100%; padding: 9px 0 4px 7px; border-bottom: 1px solid #CCC; }
 
-.file-upload {   }
+/* 버튼 스타일 */
+.btn-st1 { display: block; width: 100%; padding: 10px; border: 2px solid #000; color:#000; font-weight: bold; font-size: 18px; transition: 0.3s; text-align: center; margin-top: 15px; }
+.btn-st1:hover { background-color: #000; color: #FFF; }
+
+/*파일업로드*/
 .file-upload .img-wrap { position: relative; width: 100px; margin: 0 auto; position: relative; border-radius: 50%; border: 2px solid #ccc; overflow: hidden; }
 .file-upload .img-wrap::after {display: block;  padding-top: 100%; content: ''; }
 .file-upload .img-wrap .img-thumb { position: absolute; width: 100%; height: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-size: cover; background-position: center; }
-.btn-st1 { display: block; width: 100%; padding: 10px; border: 2px solid #000; color:#000; font-weight: bold; font-size: 18px; transition: 0.3s; text-align: center; margin-top: 15px; }
-.btn-st1:hover { background-color: #000; color: #FFF; }
+
+/*로그인, 회원가입 페이지*/
+.login-tit { margin-bottom: 34px; font-size: 42px; font-weight: bold; text-align: center; }
+.login-wrap {display: flex; width: 100%; height: 100vh; padding: 0 15px; flex-direction: column; align-items: center; justify-content: center;}
+.login-wrap > form { max-width: 480px; width: 100%; }
+.input-st-wrap { width: 100%; padding: 0 0 6px; }
+.input-st-wrap:not(:last-child) {margin-bottom:10px}
+
+/* 이미지- 1:1 비율 */
+.img-wrap { position: relative; position: relative; border-radius: 50%; border: 2px solid #ccc; overflow: hidden; }
+.img-wrap::after {display: block;  padding-top: 100%; content: ''; }
+.img-wrap .img-thumb { position: absolute; width: 100%; height: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-size: cover; background-position: center; }
