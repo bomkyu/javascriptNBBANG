@@ -53,7 +53,7 @@
     </div>
 </body>
 
-<script>
+<script type="module">
   // 사용자 입력 텍스트 상자와 결과를 표시할 div 요소를 가져옵니다.
   var searchInput = document.getElementById('search-input');
   var resultsDiv = document.getElementById('results');
@@ -61,15 +61,27 @@
   // 장소 검색을 위한 Autocomplete 객체를 생성합니다.
   var autocomplete = new google.maps.places.Autocomplete(searchInput);
 
-  // 장소가 선택될 때마다 호출되는 이벤트 리스너를 등록합니다.
   autocomplete.addListener('place_changed', function() {
-    // 선택된 장소 객체를 가져옵니다.
-    var place = autocomplete.getPlace();
+  var place = autocomplete.getPlace();
+  
+  console.log(place);
+
+  // 숙소 정보만 결과로 표시합니다.
+  if (place.types.includes('lodging')) {
+    var html = '<h3>' + place.name + '</h3>';
+    html += '<p>' + place.formatted_address + '</p>';
     
-    // 장소의 이름과 주소를 결과로 표시합니다.
-    resultsDiv.innerHTML = '<h3>' + place.name + '</h3>';
-    resultsDiv.innerHTML += '<p>' + place.formatted_address + '</p>';
-  });
+    // 가격 정보가 있는 경우 표시합니다.
+    if (place.price_level !== undefined) {
+      html += '<p>가격: ' + place.price_level + '</p>';
+    }
+    
+    // 전화번호가 있는 경우 표시합니다.
+    if (place.formatted_phone_number !== undefined) {
+      html += '<p>전화번호: ' + place.formatted_phone_number + '</p>';
+    }
+  }
+});
 </script>
 
 </html>
