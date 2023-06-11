@@ -14,13 +14,11 @@
     <!-- script -->
     <script defer src="./lib/javascript/common.js"></script>
     <script defer type="module" src="./lib/javascript/controller/main.js"></script>
-
+    <script defer src="./lib/include/header.js"></script>
+    <script defer src="./lib/include/bottom_bar.js"></script>
 </head>
 <body>
-    <header>
-        <h1>NBBang</h1>
-
-    </header>
+    <header></header>
     <div class="content-wrap">
         <div class="user-info">
             <dl>
@@ -40,9 +38,10 @@
         <div class="contain">
             <div class="no-data">
                 <p>일정이 없어요! 일정을 추가하시겠어요?</p>
-                <a href="./subpage/write.html" class="btn-st1">일정 추가</a>
+                <a href="./subpage/write.html" class="btn btn-st1"><p>일정 추가</p><span class="plus"></span></a>
             </div>
         </div>
     </div>
+    <div class="bt_bar"></div>
 </body>
 </html>

@@ -13,20 +13,17 @@
     
     <!-- script -->
     <script defer src="../lib/javascript/common.js"></script>
-    <script defer type="module" src="../lib/javascript/controller/main.js"></script>
-
+    <script defer type="module" src="../lib/javascript/controller/write.js"></script>
+    <script defer src="../lib/include/header.js"> </script>
+    <script defer src="../lib/include/bottom_bar.js"> </script>
    
-    <!-- google -->
+    <!-- googleMapApi -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQRIT2tpNRKu9hleY2y7XHil4qxRyFGv8&libraries=places"></script>
 </head>
 <body>
-    <header>
-        <h1>NBBang</h1>
-        
-    </header>
+    <header></header>
     <div class="content-wrap">
-        <input type="text" id="datepicker" placeholder="Select dates">
-        <form action="">
+        <form method="post" id="write-form">
           <ul class="date-selector">
               <li>
                   <div class="date-selector-contain">
@@ -42,21 +39,46 @@
               </li>
           </ul>
           <section>
-            <h2 class="title">친구초대</h2>
+            <h2 class="title">인원</h2>
+            <a class="btn btn-st1" href="register.html"><span class="plus"></span></a>
           </section>
           <section>
             <h2 class="title">장소</h2>
-            <input type="text" id="search-input" placeholder="장소 검색">
+            <div class="input-st-wrap">
+                <label class="input-st search" name="place-search">
+                    <input type="text" id="place-search" name="place-search">
+                    <a class="search-btn"></a>
+                </label>
+            </div>
+            <div class="input-st-wrap">
+                <label class="input-st" name="accom-price">
+                    <input type="text" id="accom-price" name="accom-price">
+                    <span>숙소가격</span>
+                </label>
+            </div>
             <div id="results"></div>
           </section>
+          <section>
+            <h2 class="title">영수증</h2>
+            <div class="file-upload">
+                <div class="img-wrap">
+                    <input type="file" class="real-upload" accept="image/*" style="display: none;">
+                    <div class="img-thumb" style="background-image: url('./lib/images/img_user.png');"></div>
+                </div>
+            </div>
+          </section>
+          <button class="btn btn-st1" type="submit"><p>등록</p></button>
       </form>
     </div>
+    <div class="bt_bar"></div>
 </body>
 
-<script type="module">
+<!--script>
   // 사용자 입력 텍스트 상자와 결과를 표시할 div 요소를 가져옵니다.
-  var searchInput = document.getElementById('search-input');
+  var searchInput = document.getElementById('place-search');
   var resultsDiv = document.getElementById('results');
+
+  searchInput.placeholder = '';
 
   // 장소 검색을 위한 Autocomplete 객체를 생성합니다.
   var autocomplete = new google.maps.places.Autocomplete(searchInput);
@@ -82,6 +104,6 @@
     }
   }
 });
-</script>
+</script-->
 
 </html>

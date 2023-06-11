@@ -1,11 +1,26 @@
 /* title */
-h2.title { font-size: 26px; font-weight: bold; }
+h2.title { margin: 40px 0 20px 0; font-size: 26px; font-weight: bold; }
 
 /* header */
-header { position: fixed; top: 0; left: 0; width: 100%; height: 60px; border-bottom: 1px solid #CCC; background: #FFF; }
+header { position: fixed; display: flex; width: 100%; height: 60px; padding:0 20px; top: 0; left: 0; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; background: #FFF; transition: 0.1s; z-index: 10; }
+header > h1 > img { width: 100px; }
+header > p > img { width: 34px; }
+
+/* 바텀바 */
+.bt_bar { position: fixed; width: 100%; padding: 10px 0; bottom: 0; left: 0; border-top: 1px solid #eee; background-color: #FFF; }
+.bt_bar > ul { display: flex; width: 70%; margin: 0 auto; justify-content: space-between;  }
+.bt_bar > ul > li > a { display: block; width: 28px; height: 28px; background-color: #ccc; }
+
+.bt_bar > ul > li > a.link-home { background: url('../images/ic_home.png') center center/cover no-repeat; }
+.bt_bar > ul > li > a.link-write { background: url('../images/ic_plus.png') center center/cover no-repeat; }
+.bt_bar > ul > li > a.link-friend { background: url('../images/ic_friend.png') center center/cover no-repeat; }
+
+.bt_bar > ul > li > a.link-home.active { background: url('../images/ic_home_on.png') center center/cover no-repeat; }
+.bt_bar > ul > li > a.link-write.active { background: url('../images/ic_plus_on.png') center center/cover no-repeat; }
+.bt_bar > ul > li > a.link-friend.active { background: url('../images/ic_friend_on.png') center center/cover no-repeat; }
 
 /* 콘텐츠 영역 */
-.content-wrap { max-width: 1320px; width: 100%; margin: 0 auto; margin-top: 20px; padding: 50px 20px 0px }
+.content-wrap { max-width: 1320px; width: 100%; margin: 0 auto; padding: 80px 20px 80px;}
 
 /*인풋 스타일*/
 .input-st { position: relative; display: block; width: 100%; height: 50px; }
@@ -17,9 +32,16 @@ header { position: fixed; top: 0; left: 0; width: 100%; height: 60px; border-bot
 .input-st span { position:absolute; padding-left: 7px; top:0; left: 0; transform-origin: left; transition: 0.3s; line-height: 38px; color:#8e8e8e; font-size:14px; }
 .input-st input { width: 100%; height: 100%; padding: 9px 0 4px 7px; border-bottom: 1px solid #CCC; }
 
+.input-st.search > a { position: absolute; width: 50px; height: 49px; top: 0; right: 0; background: #FFF url('../images/ic_search.png') center center/60% no-repeat; }
+.input-st.search > input { padding-right: 50px; }
+.input-st2 {height: 100px;}
+
 /* 버튼 스타일 */
-.btn-st1 { display: block; width: 100%; padding: 10px; border: 2px solid #000; color:#000; font-weight: bold; font-size: 18px; transition: 0.3s; text-align: center; margin-top: 15px; }
-.btn-st1:hover { background-color: #000; color: #FFF; }
+.btn { display: flex; width: 100%; align-items: center; justify-content: center; }
+.btn > p {  color:#000; font-weight: bold; font-size: 18px; }
+.btn .plus { display: block; width: 24px; height: 24px; margin-left: 5px; background: url('../images/ic_plus2.png') center center/cover no-repeat; }
+.btn-st1 { width: 100%; height: 50px; border: 2px solid #000; transition: 0.3s; margin-top: 15px; }
+
 
 /*파일업로드*/
 .file-upload .img-wrap { position: relative; width: 100px; margin: 0 auto; position: relative; border-radius: 50%; border: 2px solid #ccc; overflow: hidden; }
@@ -37,3 +59,6 @@ header { position: fixed; top: 0; left: 0; width: 100%; height: 60px; border-bot
 .img-wrap { position: relative; position: relative; border-radius: 50%; border: 2px solid #ccc; overflow: hidden; }
 .img-wrap::after {display: block;  padding-top: 100%; content: ''; }
 .img-wrap .img-thumb { position: absolute; width: 100%; height: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-size: cover; background-position: center; }
+
+
+.mt-0 { margin-top: 0; }
