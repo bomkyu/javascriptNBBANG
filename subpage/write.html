@@ -40,7 +40,7 @@
           </ul>
           <section>
             <h2 class="title">인원</h2>
-            <a class="btn btn-st1" href="register.html"><span class="plus"></span></a>
+            <a class="btn btn-st1"><span class="plus"></span></a>
           </section>
           <section>
             <h2 class="title">장소</h2>
@@ -66,44 +66,22 @@
                     <div class="img-thumb" style="background-image: url('./lib/images/img_user.png');"></div>
                 </div>
             </div>
+            <div class="input-st-wrap">
+              <label class="input-st search" name="tax-price">
+                  <input type="text" id="tax-price" name="tax-price">
+                  <span>구매 물품 가격</span>
+              </label>
+          </div>
           </section>
           <button class="btn btn-st1" type="submit"><p>등록</p></button>
       </form>
     </div>
+    <div class="modal-wrap">
+      <div class="modal-contain" data-modalStyle="basic">
+        
+      </div>
+    </div>
     <div class="bt_bar"></div>
 </body>
-
-<!--script>
-  // 사용자 입력 텍스트 상자와 결과를 표시할 div 요소를 가져옵니다.
-  var searchInput = document.getElementById('place-search');
-  var resultsDiv = document.getElementById('results');
-
-  searchInput.placeholder = '';
-
-  // 장소 검색을 위한 Autocomplete 객체를 생성합니다.
-  var autocomplete = new google.maps.places.Autocomplete(searchInput);
-
-  autocomplete.addListener('place_changed', function() {
-  var place = autocomplete.getPlace();
-  
-  console.log(place);
-
-  // 숙소 정보만 결과로 표시합니다.
-  if (place.types.includes('lodging')) {
-    var html = '<h3>' + place.name + '</h3>';
-    html += '<p>' + place.formatted_address + '</p>';
-    
-    // 가격 정보가 있는 경우 표시합니다.
-    if (place.price_level !== undefined) {
-      html += '<p>가격: ' + place.price_level + '</p>';
-    }
-    
-    // 전화번호가 있는 경우 표시합니다.
-    if (place.formatted_phone_number !== undefined) {
-      html += '<p>전화번호: ' + place.formatted_phone_number + '</p>';
-    }
-  }
-});
-</script-->
 
 </html>
