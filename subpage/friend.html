@@ -20,14 +20,31 @@
 <body>
     <header></header>
     <div class="content-wrap">
-        <div class="input-st-wrap">
-            <label class="input-st search" name="user-search">
-                <input type="text" id="user-search" name="user-search" placeholder="검색">
-                <a class="search-btn"></a>
-            </label>
+
+        <ul class="friend-tab">
+            <li class="active" data-sort="friend-list"><p>친구목록</p></li>
+            <li data-sort="friend-add"><p>친구추가</p></li>
+        </ul>
+
+        <div class="my-friend">
+            <div class="friend-request">
+                <p class="title">친구요청</p>
+
+            </div>
+            <div class="friend-list">
+
+            </div>
         </div>
-        <div class="search-freind">
-            
+        <div class="search-friend" style="display: none;">
+            <div class="input-st-wrap">
+                <label class="input-st search" name="user-search">
+                    <input type="text" id="user-search" name="user-search" placeholder="검색">
+                    <a class="search-btn"></a>
+                </label>
+            </div>
+            <div class="search-friend-result">
+
+            </div>
         </div>
     </div>
     <div class="bt_bar"></div>
