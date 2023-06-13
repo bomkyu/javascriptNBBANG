@@ -29,18 +29,21 @@
                   <div class="date-selector-contain">
                       <p class="title">가는날</p>
                       <p class="date">06.20일</p>
+                      <input type="text" id="go-day" name="go-day" style="display: none;">
                   </div>
               </li>
               <li>
                   <div class="date-selector-contain">
                       <p class="title">오는날</p>
                       <p class="date">06.25일</p>
+                      <input type="text" id="come-day" name="come-day" style="display: none;">
                   </div>
               </li>
           </ul>
           <section>
             <h2 class="title">인원</h2>
             <a class="btn btn-st1"><span class="plus"></span></a>
+            <input type="text" id="come-day" name="person" style="display: none;">
           </section>
           <section>
             <h2 class="title">장소</h2>
@@ -52,7 +55,7 @@
             </div>
             <div class="input-st-wrap">
                 <label class="input-st" name="accom-price">
-                    <input type="text" id="accom-price" name="accom-price">
+                    <input type="number" id="accom-price" name="accom-price">
                     <span>숙소가격</span>
                 </label>
             </div>
@@ -68,7 +71,7 @@
             </div>
             <div class="input-st-wrap">
               <label class="input-st search" name="tax-price">
-                  <input type="text" id="tax-price" name="tax-price">
+                  <input type="number" id="tax-price" name="tax-price">
                   <span>구매 물품 가격</span>
               </label>
           </div>
@@ -77,7 +80,7 @@
       </form>
     </div>
     <div class="modal-wrap">
-      <div class="modal-contain" data-modalStyle="basic">
+      <div class="modal-contain" data-modalStyle="full">
         
       </div>
     </div>
