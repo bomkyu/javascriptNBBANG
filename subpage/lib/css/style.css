@@ -16,3 +16,13 @@
 .my-friend > p.title { margin-top: 20px; margin-bottom: 10px; font-weight: bold; }
 
 /* 글작성 */
+.lodging-list { margin-top: 20px; }
+.lodging-list > li { position: relative; padding:20px; border: 3px solid #000; }
+.lodging-list > li:not(:last-child) { margin-bottom: 20px; }
+.lodging-list > li .title { font-size: 18px; font-weight: bold; }
+.lodging-list > li .address { font-size: 16px; font-weight: bold; margin-top: 15px; }
+
+.lodging-list > li.active { background-color: #000; }
+.lodging-list > li.active::after { position: absolute; width: 50px; height: 50px; right: 20px; top:50%; transform:translateY(-50%); background:url(../../../lib/images/ic_check2.png) center center/cover no-repeat; content:"";  }
+.lodging-list > li.active .title { color: #FFF; }
+.lodging-list > li.active .address { color: #FFF; }

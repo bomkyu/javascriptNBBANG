@@ -29,39 +29,46 @@
                   <div class="date-selector-contain">
                       <p class="title">가는날</p>
                       <p class="date">06.20일</p>
-                      <input type="text" id="go-day" name="go-day" style="display: none;">
+                      <input type="text" id="go-day" name="go-day" value="2023-07-23" style="display: none;">
                   </div>
               </li>
               <li>
                   <div class="date-selector-contain">
                       <p class="title">오는날</p>
                       <p class="date">06.25일</p>
-                      <input type="text" id="come-day" name="come-day" style="display: none;">
+                      <input type="text" id="come-day" name="come-day" value="2023-07-26" style="display: none;">
                   </div>
               </li>
           </ul>
-          <section>
+          <section class="sec1">
             <h2 class="title">인원</h2>
             <a class="btn btn-st1 modal-open" data-modal_sort="h_80" data-type="friend"><span class="plus"></span></a>
-            <input type="text" id="come-day" name="person" style="display: none;">
+            <ul class="user_list mt-20">
+                
+            </ul>
+            <input type="text" id="person" name="person" style="display: none;">
           </section>
-          <section>
-            <h2 class="title">장소</h2>
+          <section class="sec2">
+            <h2 class="title">숙소</h2>
             <div class="input-st-wrap">
                 <label class="input-st search" name="place-search">
                     <input type="text" id="place-search" name="place-search">
                     <a class="search-btn"></a>
                 </label>
+                <ul class="lodging-list">
+
+                </ul>
+                <input type="text" id="lodging" name="lodging" style="display: none;">
             </div>
             <div class="input-st-wrap">
-                <label class="input-st" name="accom-price">
-                    <input type="number" id="accom-price" name="accom-price">
+                <label class="input-st" name="lodging-price">
+                    <input type="tel" id="lodging-price" name="lodging-price">
                     <span>숙소가격</span>
                 </label>
             </div>
             <div id="results"></div>
           </section>
-          <section>
+          <section class="sec3">
             <h2 class="title">영수증</h2>
             <div class="file-upload">
                 <div class="img-wrap">
@@ -71,7 +78,7 @@
             </div>
             <div class="input-st-wrap">
               <label class="input-st search" name="tax-price">
-                  <input type="number" id="tax-price" name="tax-price">
+                  <input type="tel" id="tax-price" name="tax-price">
                   <span>구매 물품 가격</span>
               </label>
           </div>
