@@ -64,11 +64,11 @@ header > p > img { width: 34px; }
 .mt-0 { margin-top: 0; }
 
 /* 모달 */
-.modal-wrap { position: fixed; display: flex; width: 100%; height: 60vh; bottom: -100%; left: 0; background-color: #FFF; z-index: 999; transition: 0.3s; box-shadow: 1px -3px 6px 0 #eee; }
-.modal-wrap.active { bottom: 0; }
+.modal-wrap { position: fixed; display: flex; width: 100%; height: 60vh; transform: translate3D(0, 100%, 0); background-color: #FFF; z-index: 999; transition: 0.3s; box-shadow: 1px -3px 6px 0 #eee; }
+.modal-wrap.active { transform: translate3D(0, -100%, 0) }
 .modal-contain { width: 100%; height: 100%; }
-.modal-wrap .modal-header { position: relative; height: 20px; border-top: 1px solid #eee; }
+.modal-wrap .modal-header { position: relative; height: 40px; border-top: 1px solid #eee; }
 .modal-wrap .modal-header::after { position: absolute; top: 50%; left: 50%;  width: 20px; height: 2px; transform: translate(-50%, -50%); background-color: #000; content: ""; }
-.modal-wrap .modal-content { padding: 10px; height: calc(100% - 20px); overflow: auto; }
+.modal-wrap .modal-content { padding: 10px; height: calc(100% - 40px); overflow: auto; }
 /* 스피너 */
 .spiner { position: fixed; display: none; width: 100%; height: 100vh; top: 0; left: 0; background: #FFF url('../images/ic_loading.svg') center center/60px no-repeat; z-index: 999; }
