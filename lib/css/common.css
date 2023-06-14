@@ -68,6 +68,6 @@ header > p > img { width: 34px; }
 .modal-wrap.active { bottom: 0; }
 .modal-contain { width: 100%; height: 100%; }
 .modal-wrap .modal-header { height: 60px; border-top: 1px solid #eee; }
-
+.modal-wrap .modal-content { padding: 10px; }
 /* 스피너 */
 .spiner { position: fixed; display: none; width: 100%; height: 100vh; top: 0; left: 0; background: #FFF url('../images/ic_loading.svg') center center/60px no-repeat; z-index: 999; }
