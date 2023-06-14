@@ -3,13 +3,15 @@
 .friend-tab li { width: 50%; padding: 10px 10px; text-align: center; border-bottom: 1px solid #000; color: #000; }
 .friend-tab li.active { background-color: #000; color: #FFF; }
 .friend-tab li > p { font-size: 16px; font-weight: bold; color: inherit; }
-.friend-list { display: flex; align-items: center; margin-bottom: 10px; }
+.friend-list {position:  relative; display: flex; align-items: center; margin-bottom: 10px; }
 .friend-list dt { width: 50px; margin-right: 20px; }
 .friend-list dd { position: relative; width: 100%; }
 .friend-list dd > p { font-size: 12px; line-height: 1; }
 .friend-list dd > p.nick-name { margin-bottom:5px; }
 .friend-list dd > a.request-friend { position: absolute; padding: 5px; top:50%; right: 0; transform:translateY(-50%); font-size: 12px; background-color: #000; color: #FFF; }
 .friend-list dd > p.request-friend { position: absolute; padding: 5px; top:50%; right: 0; transform:translateY(-50%); font-size: 12px; color: #ccc; }
+
+.friend-list.active::after { position: absolute; width: 20px; height: 20px; right: 0; top: 50%; transform: translateY(-50%); background: url(../../../lib/images/ic_check.png) center center/cover no-repeat; content: ''; }
 
 .my-friend > p.title { margin-top: 20px; margin-bottom: 10px; font-weight: bold; }
 
