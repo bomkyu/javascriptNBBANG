@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>View</title>
+    <title>Write</title>
 
     <!--css-->
     <link rel="stylesheet" href="../lib/css/defalut.css">
@@ -13,6 +13,7 @@
     
     <!-- script -->
     <script defer src="../lib/javascript/common.js"></script>
+    <script defer src="../lib/javascript/modal/modal.js"> </script>
     <script defer type="module" src="../lib/javascript/controller/write.js"></script>
     <script defer src="../lib/include/header.js"> </script>
     <script defer src="../lib/include/bottom_bar.js"> </script>
@@ -42,7 +43,7 @@
           </ul>
           <section>
             <h2 class="title">인원</h2>
-            <a class="btn btn-st1"><span class="plus"></span></a>
+            <a class="btn btn-st1 modal-open" data-modal_sort="h_80" data-type="friend"><span class="plus"></span></a>
             <input type="text" id="come-day" name="person" style="display: none;">
           </section>
           <section>
@@ -80,8 +81,8 @@
       </form>
     </div>
     <div class="modal-wrap">
-      <div class="modal-contain" data-modalStyle="full">
-        
+      <div class="modal-contain">
+        <div class="modal-header" onclick="closeModal()"></div>
       </div>
     </div>
     <div class="bt_bar"></div>
