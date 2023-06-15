@@ -88,7 +88,12 @@ header > p > img { width: 34px; }
 .user_list > li > p { text-align: center; }
 
 /* 캘린더 */
-.calendar-title { text-align: center; font-weight: bold; font-size: 20px; }
+.calendar-title { margin: 20px 0; text-align: center; font-weight: bold; font-size: 20px; }
 .calendar-list { display: flex; flex-direction: column;}
 .calendar-list > li { display: flex; width: 100%; }
-.calendar-list > li > span { width: calc(100% / 7); }
+.calendar-list > li > p { position: relative; width: calc(100% / 7); }
+.calendar-list > li > p.previous-month > span { color: #ccc;}
+.calendar-list > li > p.next-month > span { color: #ccc;}
+.calendar-list > li > p.previous-day > span { color: #ccc;}
+.calendar-list > li > p::after { display: block; padding-top: 100%; content: ""; }
+.calendar-list > li > p > span { position: absolute; display: flex; width: 100%; height: 100%; top: 0; left: 0; align-items: center; justify-content: center; border-radius: 50%;  }
