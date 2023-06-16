@@ -92,8 +92,11 @@ header > p > img { width: 34px; }
 .calendar-list { display: flex; flex-direction: column;}
 .calendar-list > li { display: flex; width: 100%; }
 .calendar-list > li > p { position: relative; width: calc(100% / 7); }
+.calendar-list > li > p::after { display: block; padding-top: 100%; content: ""; }
+.calendar-list > li > p > span { position: absolute; display: flex; width: 100%; height: 100%; top: 0; left: 0; align-items: center; justify-content: center; border-radius: 50%; scale: 0.7;  }
 .calendar-list > li > p.previous-month > span { color: #ccc;}
 .calendar-list > li > p.next-month > span { color: #ccc;}
 .calendar-list > li > p.previous-day > span { color: #ccc;}
-.calendar-list > li > p::after { display: block; padding-top: 100%; content: ""; }
-.calendar-list > li > p > span { position: absolute; display: flex; width: 100%; height: 100%; top: 0; left: 0; align-items: center; justify-content: center; border-radius: 50%;  }
+.calendar-list > li > p.go-day > span,
+.calendar-list > li > p.come-day > span{ background-color: #000; color:#FFF; }
+.calendar-list > li > p.between-days > span { color: #003cff; }
