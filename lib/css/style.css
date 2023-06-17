@@ -15,3 +15,4 @@
 .location-info dt,
 .location-info dd { font-size: 16px; font-weight:bold }
 
+.totl-price { border : 2px solid #000; padding: 15px; font-size: 20px; font-weight: bold; text-align: center; margin-top: 30px; }
