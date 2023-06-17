@@ -53,6 +53,7 @@ table {
 
 /* input 기본 스타일 초기화 */
 input {
+	-webkit-border-radius:0;
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
@@ -72,6 +73,7 @@ input[type='number']::-webkit-outer-spin-button {
        -moz-appearance: none;   
             appearance: none;
 }
+
 
 button{ position: relative; background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer }
 
