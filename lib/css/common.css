@@ -61,8 +61,8 @@ header > p > img { width: 34px; }
 .img-wrap .img-thumb { position: absolute; width: 100%; height: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-size: cover; background-position: center; }
 
 
-.mt-0 { margin-top: 0; }
-.mt-20 { margin-top: 20px; }
+.mt-0 { margin-top: 0 !important; }
+.mt-20 { margin-top: 20px !important; }
 /* 모달 */
 .modal-wrap { position: fixed; display: flex; width: 100%; height: 100vh; bottom: -100%; left: 0; background-color: #FFF; z-index: 999; transition: 0.3s; box-shadow: 1px -3px 6px 0 #eee; transform: translateZ(0); }
 .modal-wrap.h_80 { height: 60vh; } /* class에 h_80이 들어가 있을때 */
@@ -100,3 +100,12 @@ header > p > img { width: 34px; }
 .calendar-list > li > p.go-day > span,
 .calendar-list > li > p.come-day > span{ background-color: #000; color:#FFF; }
 .calendar-list > li > p.between-days > span { color: #003cff; }
+
+/* 가는날 오는날 */
+.date-selector { display: flex; width: 100%; gap: 10px; }
+.date-selector > li { position: relative; width: 50%; border: 4px solid #000; }
+.date-selector > li::after { display: block; padding-top: 100%; content: ''; }
+.date-selector > li > .date-selector-contain { position: absolute; width: 100%; height: 100%; padding: 15px;  top: 0; left: 0;  }
+.date-selector > li > .date-selector-contain > .title { font-size: 26px; font-weight: bold; margin-bottom: 20px; }
+.date-selector > li > .date-selector-contain > .date { font-weight: bold; margin-bottom: 20px; }
+
