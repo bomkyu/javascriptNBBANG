@@ -47,7 +47,7 @@ header > p > img { width: 34px; }
 .file-upload .img-wrap { position: relative; width: 100px; margin: 0 auto; position: relative; border-radius: 50%; border: 2px solid #ccc; overflow: hidden; }
 .file-upload .img-wrap::after {display: block;  padding-top: 100%; content: ''; }
 .file-upload .img-wrap .img-thumb { position: absolute; width: 100%; height: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-size: cover; background-position: center; }
-
+.file-upload .tax-img { min-height: 200px; background: #eee url('../images/ic_camera.png') center center/30px no-repeat; text-align: center; }
 /*로그인, 회원가입 페이지*/
 .login-tit { margin-bottom: 34px; font-size: 42px; font-weight: bold; text-align: center; }
 .login-wrap {display: flex; width: 100%; height: 100vh; padding: 0 15px; flex-direction: column; align-items: center; justify-content: center;}
@@ -63,8 +63,9 @@ header > p > img { width: 34px; }
 
 .mt-0 { margin-top: 0 !important; }
 .mt-20 { margin-top: 20px !important; }
+
 /* 모달 */
-.modal-wrap { position: fixed; display: flex; width: 100%; height: 100vh; bottom: -100%; left: 0; background-color: #FFF; z-index: 999; transition: 0.3s; box-shadow: 1px -3px 6px 0 #eee; transform: translateZ(0); }
+.modal-wrap { position: fixed; display: flex; width: 100%; height: 100%; bottom: -100%; left: 0; background-color: #FFF; z-index: 999; transition: 0.3s; box-shadow: 1px -3px 6px 0 #eee;}
 .modal-wrap.h_80 { height: 60vh; } /* class에 h_80이 들어가 있을때 */
 .modal-wrap.active { bottom: 0; transform: translateZ(0); }
 .modal-wrap .modal-header { position: relative; height: 40px; border-top: 1px solid #eee; }
